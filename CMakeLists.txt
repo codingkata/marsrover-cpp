@@ -13,5 +13,5 @@ add_subdirectory(src)
 add_subdirectory(test)
 # Target
 add_executable(main ${DIRSRCS})
-target_link_libraries(main gildedRose)
+target_link_libraries(main marsrover)
 

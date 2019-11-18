@@ -76,7 +76,7 @@ int MarsMain() {
     std::string strOperation = "LMLMLMLMM";  // 具体操作内容
     int iLineInputCur = 1;                   // 当前输入的正确行数
     std::string strTmpInput;                 // 用户每行内容
-    std::vector <mars_practice::STParaGroup> vecUserInput;// 用户输入参数组
+    std::vector<mars_practice::STParaGroup> vecUserInput;// 用户输入参数组
     while (std::getline(std::cin, strTmpInput)) {
         std::stringstream ss;
         ss << strTmpInput;
@@ -104,7 +104,7 @@ int MarsMain() {
         }
         if (strTmpInput.empty()) break; // 输入空行为结束
     }
-
+    std::stringstream result;
     // 主处理逻辑
     for (unsigned i = 0; i < vecUserInput.size(); ++i) {
         bool bRip = false;
@@ -124,11 +124,23 @@ int MarsMain() {
             }
         }
         // 结果输出
+        result << vecUserInput[i].iXinput << " " << vecUserInput[i].iYinput << " "
+               << cMarsHandle.GetDirection(iDcur);
+
         std::cout << vecUserInput[i].iXinput << " " << vecUserInput[i].iYinput << " "
                   << cMarsHandle.GetDirection(iDcur);
-        if (bRip == true) std::cout << " RIP" << std::endl;
-        else std::cout << std::endl;
+        if (bRip == true) {
+            result <<" RIP" << std::endl;
+            std::cout << " RIP" << std::endl;
+        } else {
+
+            result << std::endl;
+            std::cout << std::endl;
+        }
+        std::string xx = result.str();
+        std::cout<<xx<<std::endl;
     }
+
     return 0;
 }
 

@@ -6,7 +6,7 @@ SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
 # Add the source in project root directory
 aux_source_directory(. DIRSRCS)
 # Add header file include directories
-include_directories(./ ./src)
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src)
 
 # Add block directories
 add_subdirectory(src)

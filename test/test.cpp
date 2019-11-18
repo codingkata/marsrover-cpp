@@ -42,3 +42,16 @@ TEST_F(RoverExecutionTest, test_GIVEN_rover_toward_N_WHEN_turn_L_THEN_toward_W){
 
     ASSERT_EQ("1 1 W\n", result);
 }
+
+TEST_F(RoverExecutionTest, test_multiple_rovers_run){
+    std::string firstOperation = "LMLMLMLMM";
+    mars_practice::STParaGroup firstRover(1, 2, 'N', firstOperation);
+    vecUserInput.push_back(firstRover); // 写入用户的多组输入
+    std::string secondOperation = "MMM";
+    mars_practice::STParaGroup secondRover(3, 3, 'E', secondOperation);
+    vecUserInput.push_back(secondRover); // 写入用户的多组输入
+
+    std::string result=execute(cMarsHandle,iXmax,iYmax,vecUserInput);
+
+    ASSERT_EQ("1 3 N\n5 3 E RIP\n", result);
+}

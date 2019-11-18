@@ -1,6 +1,4 @@
-
 #include "demo.h"
-
 
 void mars_practice::CMarsHandle::Init() {
     // 操作符号限制
@@ -146,4 +144,3 @@ std::string execute(mars_practice::CMarsHandle &cMarsHandle, int iXmax, int iYma
     std::string xx = result.str();
     return xx;
 }
-

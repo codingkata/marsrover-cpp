@@ -1,6 +1,7 @@
 
 #include "demo.h"
 
+
 void mars_practice::CMarsHandle::Init() {
     // 操作符号限制
     setOperation.insert('L');
@@ -104,6 +105,15 @@ int MarsMain() {
         }
         if (strTmpInput.empty()) break; // 输入空行为结束
     }
+    std::string xx = execute(cMarsHandle, iXmax, iYmax, vecUserInput);
+
+    std::cout<<xx<<std::endl;
+
+    return 0;
+}
+
+std::string execute(mars_practice::CMarsHandle &cMarsHandle, int iXmax, int iYmax,
+                    std::vector<mars_practice::STParaGroup> &vecUserInput) {
     std::stringstream result;
     // 主处理逻辑
     for (unsigned i = 0; i < vecUserInput.size(); ++i) {
@@ -128,14 +138,12 @@ int MarsMain() {
                << cMarsHandle.GetDirection(iDcur);
 
         if (bRip == true) {
-            result <<" RIP" << std::endl;
+            result << " RIP" << std::endl;
         } else {
             result << std::endl;
         }
-        std::string xx = result.str();
-        std::cout<<xx<<std::endl;
     }
-
-    return 0;
+    std::string xx = result.str();
+    return xx;
 }
 

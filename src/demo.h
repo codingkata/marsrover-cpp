@@ -59,6 +59,7 @@ namespace mars_practice {
     };
 
 }
-
+std::string execute(mars_practice::CMarsHandle &cMarsHandle, int iXmax, int iYmax,
+                    std::vector<mars_practice::STParaGroup> &vecUserInput);
 int MarsMain();
 

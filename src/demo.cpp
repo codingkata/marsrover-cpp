@@ -127,15 +127,10 @@ int MarsMain() {
         result << vecUserInput[i].iXinput << " " << vecUserInput[i].iYinput << " "
                << cMarsHandle.GetDirection(iDcur);
 
-        std::cout << vecUserInput[i].iXinput << " " << vecUserInput[i].iYinput << " "
-                  << cMarsHandle.GetDirection(iDcur);
         if (bRip == true) {
             result <<" RIP" << std::endl;
-            std::cout << " RIP" << std::endl;
         } else {
-
             result << std::endl;
-            std::cout << std::endl;
         }
         std::string xx = result.str();
         std::cout<<xx<<std::endl;
